@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6c5ce7" />
     <title>🌟 StudyVerse MEGA - Ultimate Learning Platform</title>
     
     <!-- PWA Support -->
@@ -61,6 +62,8 @@
             min-height: 100vh;
             overflow-x: hidden;
             padding: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ============================================================
@@ -100,6 +103,7 @@
            ============================================================ */
         .header {
             background: var(--card);
+            -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: var(--radius);
@@ -170,6 +174,7 @@
             font-weight: 700;
             font-size: 0.75rem;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -188,9 +193,12 @@
             border: 1px solid rgba(255,255,255,0.06);
             font-family: var(--font);
             transition: var(--transition);
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .header-btn:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(108,92,231,0.3); }
+        .header-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            NAV TABS
@@ -201,6 +209,7 @@
             flex-wrap: wrap;
             margin-bottom: 20px;
             background: var(--card);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border-radius: var(--radius);
             padding: 8px 12px;
@@ -219,11 +228,14 @@
             color: var(--text2);
             font-family: var(--font);
             transition: var(--transition);
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .nav-tab:hover { background: rgba(255,255,255,0.05); color: var(--text); }
         .nav-tab.active { background: var(--accent); color: #fff; box-shadow: 0 4px 20px rgba(108,92,231,0.3); }
         .nav-tab i { margin-right: 6px; }
+        .nav-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         .tab-content {
             display: none;
@@ -249,6 +261,7 @@
 
         .stat-card {
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius);
@@ -431,6 +444,7 @@
 
         .daily-challenge .challenge-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(253,203,110,0.3); }
         .daily-challenge .challenge-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+        .daily-challenge .challenge-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            TODAY FOCUS
@@ -546,6 +560,7 @@
         }
 
         .section-title .add-btn:hover { transform: scale(1.05); box-shadow: 0 4px 20px rgba(108,92,231,0.3); }
+        .section-title .add-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            COURSE CARDS
@@ -559,6 +574,7 @@
 
         .course-card {
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius);
@@ -690,6 +706,7 @@
         }
 
         .course-card .course-actions button:hover { background: var(--accent); color: #fff; transform: scale(1.03); }
+        .course-card .course-actions button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         .course-card .course-actions .btn-complete { background: var(--green); color: #fff; }
         .course-card .course-actions .btn-complete:hover { box-shadow: 0 4px 20px rgba(0,184,148,0.3); }
         .course-card .course-actions .btn-reset { background: rgba(225,112,85,0.1); color: var(--red); }
@@ -712,6 +729,7 @@
             align-items: center;
             gap: 10px;
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
@@ -758,6 +776,7 @@
 
         .analytics-card {
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius);
@@ -798,6 +817,7 @@
             align-items: center;
             gap: 12px;
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
@@ -829,6 +849,8 @@
             color: #fff;
         }
 
+        .goal-item .goal-check:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
         .goal-item .goal-info { flex: 1; }
         .goal-item .goal-info .title { font-weight: 600; font-size: 0.85rem; }
         .goal-item .goal-info .desc { color: var(--text2); font-size: 0.7rem; }
@@ -855,6 +877,7 @@
             transition: var(--transition);
         }
         .goal-item .goal-delete:hover { color: var(--red); }
+        .goal-item .goal-delete:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            NOTES
@@ -868,6 +891,7 @@
 
         .note-card {
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
@@ -913,9 +937,10 @@
         }
 
         .note-card .note-delete:hover { color: var(--red); }
+        .note-card .note-delete:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
-           QUEST SYSTEM
+           QUESTS
            ============================================================ */
         .quests-list {
             display: flex;
@@ -929,6 +954,7 @@
             align-items: center;
             gap: 12px;
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
@@ -1004,6 +1030,7 @@
 
         .mood-btn:hover { transform: scale(1.15); border-color: var(--accent); }
         .mood-btn.active { border-color: var(--accent); box-shadow: 0 0 30px rgba(108,92,231,0.3); }
+        .mood-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            LEADERBOARD
@@ -1020,6 +1047,7 @@
             align-items: center;
             gap: 12px;
             background: var(--card);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
@@ -1056,6 +1084,7 @@
             position: fixed;
             inset: 0;
             background: rgba(10,10,26,0.95);
+            -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
             z-index: 1000;
             flex-direction: column;
@@ -1098,6 +1127,7 @@
             font-family: var(--font);
         }
 
+        .focus-mode .focus-controls button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         .focus-mode .focus-controls .start-btn { background: var(--green); color: #fff; }
         .focus-mode .focus-controls .start-btn:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0,184,148,0.3); }
         .focus-mode .focus-controls .pause-btn { background: var(--orange); color: #1a1f36; }
@@ -1136,6 +1166,7 @@
 
         .login-box {
             background: var(--card);
+            -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: var(--radius);
@@ -1203,6 +1234,7 @@
         }
 
         .login-box .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(108,92,231,0.3); }
+        .login-box .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         .login-box .btn-google {
             width: 100%;
@@ -1223,11 +1255,13 @@
         }
 
         .login-box .btn-google:hover { background: rgba(255,255,255,0.05); transform: scale(1.02); }
+        .login-box .btn-google:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         .login-box .btn-google svg { width: 18px; height: 18px; }
 
         .login-box .auth-toggle { margin-top: 12px; color: var(--text2); font-size: 0.75rem; }
         .login-box .auth-toggle a { color: var(--accent2); cursor: pointer; font-weight: 600; }
         .login-box .auth-toggle a:hover { text-decoration: underline; }
+        .login-box .auth-toggle a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         .login-box .error-msg { color: var(--red); font-size: 0.7rem; min-height: 16px; margin-bottom: 6px; }
 
         /* ============================================================
@@ -1246,6 +1280,7 @@
 
         .toast {
             background: var(--card);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255,255,255,0.06);
             padding: 10px 16px;
@@ -1366,6 +1401,7 @@
 
         .theme-btn:hover { transform: scale(1.15); border-color: #fff; }
         .theme-btn.active { border-color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .theme-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
         /* ============================================================
            RESPONSIVE
@@ -1442,41 +1478,47 @@
     <!-- ============================================================
     STARS CANVAS
     ============================================================ -->
-    <canvas id="stars-canvas"></canvas>
+    <canvas id="stars-canvas" aria-hidden="true"></canvas>
 
     <!-- ============================================================
     PARTICLES
     ============================================================ -->
-    <div id="particles-container"></div>
+    <div id="particles-container" aria-hidden="true"></div>
 
     <!-- ============================================================
     LOADING
     ============================================================ -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
+    <div class="loading-overlay" id="loadingOverlay" role="status" aria-label="Loading">
+        <div class="loading-spinner" aria-hidden="true"></div>
         <div class="loading-text">✦ Loading your universe...</div>
     </div>
 
     <!-- ============================================================
     CONFETTI
     ============================================================ -->
-    <div class="confetti-container" id="confettiContainer"></div>
+    <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
 
     <!-- ============================================================
     TOAST
     ============================================================ -->
-    <div class="toast-container" id="toastContainer"></div>
+    <div class="toast-container" id="toastContainer" role="status" aria-live="polite"></div>
 
     <!-- ============================================================
     FOCUS MODE
     ============================================================ -->
-    <div class="focus-mode" id="focusMode">
+    <div class="focus-mode" id="focusMode" role="dialog" aria-label="Focus Mode">
         <div class="focus-label" id="focusLabel">Focus Mode</div>
-        <div class="focus-time" id="focusTime">25:00</div>
+        <div class="focus-time" id="focusTime" role="timer" aria-label="Focus timer">25:00</div>
         <div class="focus-controls">
-            <button class="start-btn" onclick="startFocus()"><i class="fas fa-play"></i> Start</button>
-            <button class="pause-btn" onclick="pauseFocus()"><i class="fas fa-pause"></i> Pause</button>
-            <button class="stop-btn" onclick="stopFocus()"><i class="fas fa-times"></i> Close</button>
+            <button class="start-btn" onclick="startFocus()" aria-label="Start focus timer">
+                <i class="fas fa-play" aria-hidden="true"></i> Start
+            </button>
+            <button class="pause-btn" onclick="pauseFocus()" aria-label="Pause focus timer">
+                <i class="fas fa-pause" aria-hidden="true"></i> Pause
+            </button>
+            <button class="stop-btn" onclick="stopFocus()" aria-label="Close focus mode">
+                <i class="fas fa-times" aria-hidden="true"></i> Close
+            </button>
         </div>
         <div class="focus-quote" id="focusQuote">"The secret of getting ahead is getting started."</div>
     </div>
@@ -1484,85 +1526,85 @@
     <!-- ============================================================
     MAIN APP
     ============================================================ -->
-    <div class="container" id="app" style="display:none;">
+    <div class="container" id="app" style="display:none;" role="main">
 
         <!-- HEADER -->
-        <header class="header">
+        <header class="header" role="banner">
             <div class="logo">
-                <i class="fas fa-sparkles"></i> StudyVerse
+                <i class="fas fa-sparkles" aria-hidden="true"></i> StudyVerse
             </div>
             <div class="header-right">
-                <div class="theme-selector">
-                    <button class="theme-btn active" style="background:#6c5ce7;" onclick="setTheme('default')" title="Default"></button>
-                    <button class="theme-btn" style="background:#e17055;" onclick="setTheme('sunset')" title="Sunset"></button>
-                    <button class="theme-btn" style="background:#00b894;" onclick="setTheme('forest')" title="Forest"></button>
-                    <button class="theme-btn" style="background:#74b9ff;" onclick="setTheme('ocean')" title="Ocean"></button>
-                    <button class="theme-btn" style="background:#fd79a8;" onclick="setTheme('cherry')" title="Cherry"></button>
+                <div class="theme-selector" role="group" aria-label="Theme selector">
+                    <button class="theme-btn active" style="background:#6c5ce7;" onclick="setTheme('default')" title="Default theme" aria-label="Default theme"></button>
+                    <button class="theme-btn" style="background:#e17055;" onclick="setTheme('sunset')" title="Sunset theme" aria-label="Sunset theme"></button>
+                    <button class="theme-btn" style="background:#00b894;" onclick="setTheme('forest')" title="Forest theme" aria-label="Forest theme"></button>
+                    <button class="theme-btn" style="background:#74b9ff;" onclick="setTheme('ocean')" title="Ocean theme" aria-label="Ocean theme"></button>
+                    <button class="theme-btn" style="background:#fd79a8;" onclick="setTheme('cherry')" title="Cherry theme" aria-label="Cherry theme"></button>
                 </div>
 
-                <div class="user-profile" onclick="toggleUserMenu()">
-                    <div class="user-avatar" id="userAvatar">🌟</div>
+                <div class="user-profile" onclick="toggleUserMenu()" role="button" tabindex="0" aria-label="User profile">
+                    <div class="user-avatar" id="userAvatar" aria-hidden="true">🌟</div>
                     <span class="user-name" id="userDisplayName">Explorer</span>
                     <span class="user-level" id="userLevel">✦ Lv.1</span>
                 </div>
 
-                <button class="header-btn" onclick="toggleFocusMode()">
-                    <i class="fas fa-expand"></i> Focus
+                <button class="header-btn" onclick="toggleFocusMode()" aria-label="Toggle focus mode">
+                    <i class="fas fa-expand" aria-hidden="true"></i> Focus
                 </button>
 
-                <button class="header-btn" onclick="toggleTheme()">
-                    <i class="fas fa-moon" id="themeIcon"></i>
+                <button class="header-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
                 </button>
 
-                <button class="header-btn" onclick="signOut()">
-                    <i class="fas fa-sign-out-alt"></i>
+                <button class="header-btn" onclick="signOut()" aria-label="Sign out">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
                 </button>
 
-                <div class="sync-status">
-                    <i class="fas fa-cloud" id="syncIcon"></i>
+                <div class="sync-status" role="status" aria-live="polite">
+                    <i class="fas fa-cloud" id="syncIcon" aria-hidden="true"></i>
                     <span id="syncText">Synced</span>
                 </div>
             </div>
         </header>
 
         <!-- NAV TABS -->
-        <div class="nav-tabs">
-            <button class="nav-tab active" data-tab="dashboard" onclick="switchTab('dashboard')">
-                <i class="fas fa-home"></i> Dashboard
+        <nav class="nav-tabs" role="tablist" aria-label="Main navigation">
+            <button class="nav-tab active" data-tab="dashboard" onclick="switchTab('dashboard')" role="tab" aria-selected="true" aria-label="Dashboard">
+                <i class="fas fa-home" aria-hidden="true"></i> Dashboard
             </button>
-            <button class="nav-tab" data-tab="courses" onclick="switchTab('courses')">
-                <i class="fas fa-book"></i> Courses
+            <button class="nav-tab" data-tab="courses" onclick="switchTab('courses')" role="tab" aria-selected="false" aria-label="Courses">
+                <i class="fas fa-book" aria-hidden="true"></i> Courses
             </button>
-            <button class="nav-tab" data-tab="analytics" onclick="switchTab('analytics')">
-                <i class="fas fa-chart-line"></i> Analytics
+            <button class="nav-tab" data-tab="analytics" onclick="switchTab('analytics')" role="tab" aria-selected="false" aria-label="Analytics">
+                <i class="fas fa-chart-line" aria-hidden="true"></i> Analytics
             </button>
-            <button class="nav-tab" data-tab="goals" onclick="switchTab('goals')">
-                <i class="fas fa-bullseye"></i> Goals
+            <button class="nav-tab" data-tab="goals" onclick="switchTab('goals')" role="tab" aria-selected="false" aria-label="Goals">
+                <i class="fas fa-bullseye" aria-hidden="true"></i> Goals
             </button>
-            <button class="nav-tab" data-tab="notes" onclick="switchTab('notes')">
-                <i class="fas fa-sticky-note"></i> Notes
+            <button class="nav-tab" data-tab="notes" onclick="switchTab('notes')" role="tab" aria-selected="false" aria-label="Notes">
+                <i class="fas fa-sticky-note" aria-hidden="true"></i> Notes
             </button>
-            <button class="nav-tab" data-tab="quests" onclick="switchTab('quests')">
-                <i class="fas fa-scroll"></i> Quests
+            <button class="nav-tab" data-tab="quests" onclick="switchTab('quests')" role="tab" aria-selected="false" aria-label="Quests">
+                <i class="fas fa-scroll" aria-hidden="true"></i> Quests
             </button>
-            <button class="nav-tab" data-tab="leaderboard" onclick="switchTab('leaderboard')">
-                <i class="fas fa-trophy"></i> Leaderboard
+            <button class="nav-tab" data-tab="leaderboard" onclick="switchTab('leaderboard')" role="tab" aria-selected="false" aria-label="Leaderboard">
+                <i class="fas fa-trophy" aria-hidden="true"></i> Leaderboard
             </button>
-            <button class="nav-tab" data-tab="achievements" onclick="switchTab('achievements')">
-                <i class="fas fa-medal"></i> Achievements
+            <button class="nav-tab" data-tab="achievements" onclick="switchTab('achievements')" role="tab" aria-selected="false" aria-label="Achievements">
+                <i class="fas fa-medal" aria-hidden="true"></i> Achievements
             </button>
-            <button class="nav-tab" data-tab="mood" onclick="switchTab('mood')">
-                <i class="fas fa-smile"></i> Mood
+            <button class="nav-tab" data-tab="mood" onclick="switchTab('mood')" role="tab" aria-selected="false" aria-label="Mood tracker">
+                <i class="fas fa-smile" aria-hidden="true"></i> Mood
             </button>
-            <button class="nav-tab" data-tab="settings" onclick="switchTab('settings')">
-                <i class="fas fa-cog"></i> Settings
+            <button class="nav-tab" data-tab="settings" onclick="switchTab('settings')" role="tab" aria-selected="false" aria-label="Settings">
+                <i class="fas fa-cog" aria-hidden="true"></i> Settings
             </button>
-        </div>
+        </nav>
 
         <!-- ============================================================
         TAB: DASHBOARD
         ============================================================ -->
-        <div class="tab-content active" id="tab-dashboard">
+        <div class="tab-content active" id="tab-dashboard" role="tabpanel" aria-label="Dashboard">
             <!-- STATS -->
             <div class="stats-row">
                 <div class="stat-card">
@@ -1594,7 +1636,7 @@
             <!-- PROGRESS -->
             <div class="progress-wrap">
                 <div class="progress-ring">
-                    <svg width="130" height="130" viewBox="0 0 120 120">
+                    <svg width="130" height="130" viewBox="0 0 120 120" aria-hidden="true">
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#6c5ce7" />
@@ -1613,15 +1655,15 @@
                 </div>
                 <div class="progress-stats">
                     <div class="stat-item">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-fire" aria-hidden="true"></i>
                         <span>Streak: <span class="value" id="streakCount">0</span> days</span>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
                         <span>XP: <span class="value" id="xpCount">0</span></span>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                         <span>Today: <span class="value" id="todayStudyTime">0h 0m</span></span>
                     </div>
                 </div>
@@ -1630,30 +1672,30 @@
             <!-- DAILY CHALLENGE -->
             <div class="daily-challenge" id="dailyChallenge">
                 <div class="challenge-text">
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                     <div>
                         <span id="challengeTitle">Daily Challenge</span>
                         <small id="challengeDesc">Complete today's challenge for bonus XP!</small>
                     </div>
                 </div>
-                <button class="challenge-btn" id="challengeBtn" onclick="completeChallenge()">
-                    <i class="fas fa-check"></i> Complete
+                <button class="challenge-btn" id="challengeBtn" onclick="completeChallenge()" aria-label="Complete daily challenge">
+                    <i class="fas fa-check" aria-hidden="true"></i> Complete
                 </button>
             </div>
 
             <!-- TODAY FOCUS -->
             <div class="today-focus">
                 <div class="top-row">
-                    <h2><i class="fas fa-bullseye"></i> Today's Focus</h2>
+                    <h2><i class="fas fa-bullseye" aria-hidden="true"></i> Today's Focus</h2>
                     <span style="color:var(--text2);font-size:0.7rem;" id="todayDateLabel"></span>
                 </div>
                 <div class="day-detail">
                     <div class="session">
-                        <h4><i class="fas fa-laptop-code"></i> Morning</h4>
+                        <h4><i class="fas fa-laptop-code" aria-hidden="true"></i> Morning</h4>
                         <p id="todayMorning">Study Python basics</p>
                     </div>
                     <div class="session">
-                        <h4><i class="fas fa-book-open"></i> Evening</h4>
+                        <h4><i class="fas fa-book-open" aria-hidden="true"></i> Evening</h4>
                         <p id="todayEvening">Review notes</p>
                     </div>
                 </div>
@@ -1661,31 +1703,31 @@
 
             <!-- ACHIEVEMENTS SNEAK PEEK -->
             <div class="section-title">
-                <i class="fas fa-medal"></i> Recent Achievements
+                <i class="fas fa-medal" aria-hidden="true"></i> Recent Achievements
                 <span class="badge-count" id="achievementBadge">0</span>
-                <button class="add-btn" onclick="switchTab('achievements')" style="background:var(--accent2);">
-                    View All <i class="fas fa-arrow-right"></i>
+                <button class="add-btn" onclick="switchTab('achievements')" style="background:var(--accent2);" aria-label="View all achievements">
+                    View All <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="achievements-grid" id="achievementsPreview"></div>
 
             <!-- QUOTE -->
             <div style="text-align:center;padding:16px 0;color:var(--text3);font-style:italic;border-top:1px solid rgba(255,255,255,0.03);margin-top:8px;font-size:0.8rem;">
-                <i class="fas fa-quote-left" style="color:var(--accent2);margin-right:8px;opacity:0.5;"></i>
+                <i class="fas fa-quote-left" style="color:var(--accent2);margin-right:8px;opacity:0.5;" aria-hidden="true"></i>
                 <span id="dailyQuote">The expert in anything was once a beginner.</span>
-                <i class="fas fa-quote-right" style="color:var(--accent2);margin-left:8px;opacity:0.5;"></i>
+                <i class="fas fa-quote-right" style="color:var(--accent2);margin-left:8px;opacity:0.5;" aria-hidden="true"></i>
             </div>
         </div>
 
         <!-- ============================================================
         TAB: COURSES
         ============================================================ -->
-        <div class="tab-content" id="tab-courses">
+        <div class="tab-content" id="tab-courses" role="tabpanel" aria-label="Courses">
             <div class="section-title">
-                <i class="fas fa-book"></i> My Learning Path
+                <i class="fas fa-book" aria-hidden="true"></i> My Learning Path
                 <span class="badge-count" id="courseCount">0</span>
-                <button class="add-btn" onclick="addCourse()">
-                    <i class="fas fa-plus"></i> Add Course
+                <button class="add-btn" onclick="addCourse()" aria-label="Add new course">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Add Course
                 </button>
             </div>
             <div class="course-grid" id="courseGrid"></div>
@@ -1694,22 +1736,22 @@
         <!-- ============================================================
         TAB: ANALYTICS
         ============================================================ -->
-        <div class="tab-content" id="tab-analytics">
+        <div class="tab-content" id="tab-analytics" role="tabpanel" aria-label="Analytics">
             <div class="section-title">
-                <i class="fas fa-chart-line"></i> Study Analytics
+                <i class="fas fa-chart-line" aria-hidden="true"></i> Study Analytics
             </div>
             <div class="analytics-grid">
                 <div class="analytics-card">
-                    <h3><i class="fas fa-chart-bar"></i> Course Progress</h3>
-                    <canvas id="progressChart"></canvas>
+                    <h3><i class="fas fa-chart-bar" aria-hidden="true"></i> Course Progress</h3>
+                    <canvas id="progressChart" aria-label="Course progress chart"></canvas>
                 </div>
                 <div class="analytics-card">
-                    <h3><i class="fas fa-pie-chart"></i> Course Distribution</h3>
-                    <canvas id="distributionChart"></canvas>
+                    <h3><i class="fas fa-pie-chart" aria-hidden="true"></i> Course Distribution</h3>
+                    <canvas id="distributionChart" aria-label="Course distribution chart"></canvas>
                 </div>
                 <div class="analytics-card">
-                    <h3><i class="fas fa-chart-area"></i> XP Growth</h3>
-                    <canvas id="xpChart"></canvas>
+                    <h3><i class="fas fa-chart-area" aria-hidden="true"></i> XP Growth</h3>
+                    <canvas id="xpChart" aria-label="XP growth chart"></canvas>
                 </div>
             </div>
         </div>
@@ -1717,11 +1759,11 @@
         <!-- ============================================================
         TAB: GOALS
         ============================================================ -->
-        <div class="tab-content" id="tab-goals">
+        <div class="tab-content" id="tab-goals" role="tabpanel" aria-label="Goals">
             <div class="section-title">
-                <i class="fas fa-bullseye"></i> Your Goals
-                <button class="add-btn" onclick="addGoal()">
-                    <i class="fas fa-plus"></i> Add Goal
+                <i class="fas fa-bullseye" aria-hidden="true"></i> Your Goals
+                <button class="add-btn" onclick="addGoal()" aria-label="Add new goal">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Add Goal
                 </button>
             </div>
             <div class="goals-list" id="goalsList"></div>
@@ -1730,11 +1772,11 @@
         <!-- ============================================================
         TAB: NOTES
         ============================================================ -->
-        <div class="tab-content" id="tab-notes">
+        <div class="tab-content" id="tab-notes" role="tabpanel" aria-label="Notes">
             <div class="section-title">
-                <i class="fas fa-sticky-note"></i> Study Notes
-                <button class="add-btn" onclick="addNote()">
-                    <i class="fas fa-plus"></i> Add Note
+                <i class="fas fa-sticky-note" aria-hidden="true"></i> Study Notes
+                <button class="add-btn" onclick="addNote()" aria-label="Add new note">
+                    <i class="fas fa-plus" aria-hidden="true"></i> Add Note
                 </button>
             </div>
             <div class="notes-grid" id="notesGrid"></div>
@@ -1743,11 +1785,11 @@
         <!-- ============================================================
         TAB: QUESTS
         ============================================================ -->
-        <div class="tab-content" id="tab-quests">
+        <div class="tab-content" id="tab-quests" role="tabpanel" aria-label="Quests">
             <div class="section-title">
-                <i class="fas fa-scroll"></i> Learning Quests
-                <button class="add-btn" onclick="generateQuest()">
-                    <i class="fas fa-plus"></i> New Quest
+                <i class="fas fa-scroll" aria-hidden="true"></i> Learning Quests
+                <button class="add-btn" onclick="generateQuest()" aria-label="Generate new quest">
+                    <i class="fas fa-plus" aria-hidden="true"></i> New Quest
                 </button>
             </div>
             <div class="quests-list" id="questsList"></div>
@@ -1756,9 +1798,9 @@
         <!-- ============================================================
         TAB: LEADERBOARD
         ============================================================ -->
-        <div class="tab-content" id="tab-leaderboard">
+        <div class="tab-content" id="tab-leaderboard" role="tabpanel" aria-label="Leaderboard">
             <div class="section-title">
-                <i class="fas fa-trophy"></i> Global Leaderboard
+                <i class="fas fa-trophy" aria-hidden="true"></i> Global Leaderboard
                 <span class="badge-count" id="leaderboardCount">0</span>
             </div>
             <div class="leaderboard-list" id="leaderboardList"></div>
@@ -1767,9 +1809,9 @@
         <!-- ============================================================
         TAB: ACHIEVEMENTS
         ============================================================ -->
-        <div class="tab-content" id="tab-achievements">
+        <div class="tab-content" id="tab-achievements" role="tabpanel" aria-label="Achievements">
             <div class="section-title">
-                <i class="fas fa-medal"></i> All Achievements
+                <i class="fas fa-medal" aria-hidden="true"></i> All Achievements
                 <span class="badge-count" id="achievementFullCount">0</span>
             </div>
             <div class="achievements-grid" id="achievementsFullGrid"></div>
@@ -1778,26 +1820,26 @@
         <!-- ============================================================
         TAB: MOOD
         ============================================================ -->
-        <div class="tab-content" id="tab-mood">
+        <div class="tab-content" id="tab-mood" role="tabpanel" aria-label="Mood tracker">
             <div class="section-title">
-                <i class="fas fa-smile"></i> Mood Tracker
+                <i class="fas fa-smile" aria-hidden="true"></i> Mood Tracker
             </div>
             <div class="analytics-card" style="text-align:center;">
                 <p style="color:var(--text2);font-size:0.85rem;margin-bottom:12px;">How are you feeling today?</p>
-                <div class="mood-selector" id="moodSelector">
-                    <button class="mood-btn" onclick="setMood('😊')">😊</button>
-                    <button class="mood-btn" onclick="setMood('😄')">😄</button>
-                    <button class="mood-btn" onclick="setMood('😌')">😌</button>
-                    <button class="mood-btn" onclick="setMood('😐')">😐</button>
-                    <button class="mood-btn" onclick="setMood('😔')">😔</button>
-                    <button class="mood-btn" onclick="setMood('😤')">😤</button>
-                    <button class="mood-btn" onclick="setMood('🥱')">🥱</button>
-                    <button class="mood-btn" onclick="setMood('🤓')">🤓</button>
+                <div class="mood-selector" id="moodSelector" role="group" aria-label="Mood selection">
+                    <button class="mood-btn" onclick="setMood('😊')" aria-label="Happy mood">😊</button>
+                    <button class="mood-btn" onclick="setMood('😄')" aria-label="Very happy mood">😄</button>
+                    <button class="mood-btn" onclick="setMood('😌')" aria-label="Calm mood">😌</button>
+                    <button class="mood-btn" onclick="setMood('😐')" aria-label="Neutral mood">😐</button>
+                    <button class="mood-btn" onclick="setMood('😔')" aria-label="Sad mood">😔</button>
+                    <button class="mood-btn" onclick="setMood('😤')" aria-label="Frustrated mood">😤</button>
+                    <button class="mood-btn" onclick="setMood('🥱')" aria-label="Tired mood">🥱</button>
+                    <button class="mood-btn" onclick="setMood('🤓')" aria-label="Studious mood">🤓</button>
                 </div>
                 <p style="color:var(--text3);font-size:0.7rem;margin-top:8px;" id="moodDisplay">Select a mood to track</p>
             </div>
             <div class="analytics-card" style="margin-top:12px;">
-                <h3><i class="fas fa-chart-line"></i> Mood History</h3>
+                <h3><i class="fas fa-chart-line" aria-hidden="true"></i> Mood History</h3>
                 <div id="moodHistory" style="display:flex;gap:8px;flex-wrap:wrap;padding:8px 0;"></div>
             </div>
         </div>
@@ -1805,34 +1847,34 @@
         <!-- ============================================================
         TAB: SETTINGS
         ============================================================ -->
-        <div class="tab-content" id="tab-settings">
+        <div class="tab-content" id="tab-settings" role="tabpanel" aria-label="Settings">
             <div class="section-title">
-                <i class="fas fa-cog"></i> Settings
+                <i class="fas fa-cog" aria-hidden="true"></i> Settings
             </div>
             <div class="analytics-card">
-                <h3><i class="fas fa-palette"></i> Appearance</h3>
+                <h3><i class="fas fa-palette" aria-hidden="true"></i> Appearance</h3>
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
-                    <button class="header-btn" onclick="toggleTheme()">Toggle Theme</button>
-                    <div class="theme-selector">
-                        <button class="theme-btn active" style="background:#6c5ce7;" onclick="setTheme('default')"></button>
-                        <button class="theme-btn" style="background:#e17055;" onclick="setTheme('sunset')"></button>
-                        <button class="theme-btn" style="background:#00b894;" onclick="setTheme('forest')"></button>
-                        <button class="theme-btn" style="background:#74b9ff;" onclick="setTheme('ocean')"></button>
-                        <button class="theme-btn" style="background:#fd79a8;" onclick="setTheme('cherry')"></button>
+                    <button class="header-btn" onclick="toggleTheme()" aria-label="Toggle theme">Toggle Theme</button>
+                    <div class="theme-selector" role="group" aria-label="Theme selector">
+                        <button class="theme-btn active" style="background:#6c5ce7;" onclick="setTheme('default')" title="Default theme" aria-label="Default theme"></button>
+                        <button class="theme-btn" style="background:#e17055;" onclick="setTheme('sunset')" title="Sunset theme" aria-label="Sunset theme"></button>
+                        <button class="theme-btn" style="background:#00b894;" onclick="setTheme('forest')" title="Forest theme" aria-label="Forest theme"></button>
+                        <button class="theme-btn" style="background:#74b9ff;" onclick="setTheme('ocean')" title="Ocean theme" aria-label="Ocean theme"></button>
+                        <button class="theme-btn" style="background:#fd79a8;" onclick="setTheme('cherry')" title="Cherry theme" aria-label="Cherry theme"></button>
                     </div>
                 </div>
             </div>
             <div class="analytics-card">
-                <h3><i class="fas fa-database"></i> Data</h3>
+                <h3><i class="fas fa-database" aria-hidden="true"></i> Data</h3>
                 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
-                    <button class="header-btn" onclick="exportData()"><i class="fas fa-download"></i> Export Data</button>
-                    <button class="header-btn" onclick="document.getElementById('importFile').click()"><i class="fas fa-upload"></i> Import Data</button>
-                    <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)" />
-                    <button class="header-btn" onclick="resetAll()" style="background:rgba(225,112,85,0.15);color:var(--red);"><i class="fas fa-trash"></i> Reset All</button>
+                    <button class="header-btn" onclick="exportData()" aria-label="Export data"><i class="fas fa-download" aria-hidden="true"></i> Export Data</button>
+                    <button class="header-btn" onclick="document.getElementById('importFile').click()" aria-label="Import data"><i class="fas fa-upload" aria-hidden="true"></i> Import Data</button>
+                    <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importData(event)" aria-label="Import data file" />
+                    <button class="header-btn" onclick="resetAll()" style="background:rgba(225,112,85,0.15);color:var(--red);" aria-label="Reset all progress"><i class="fas fa-trash" aria-hidden="true"></i> Reset All</button>
                 </div>
             </div>
             <div class="analytics-card">
-                <h3><i class="fas fa-info-circle"></i> About</h3>
+                <h3><i class="fas fa-info-circle" aria-hidden="true"></i> About</h3>
                 <p style="color:var(--text2);font-size:0.8rem;">StudyVerse MEGA - Ultimate Learning Platform v3.0</p>
                 <p style="color:var(--text3);font-size:0.7rem;">Track courses, earn XP, unlock achievements, and level up!</p>
             </div>
@@ -1843,14 +1885,14 @@
     <!-- ============================================================
     LOGIN
     ============================================================ -->
-    <div class="login-screen" id="loginScreen">
+    <div class="login-screen" id="loginScreen" role="main" aria-label="Login screen">
         <div class="login-box">
             <div class="logo">✦ StudyVerse</div>
             <p class="subtitle">The ultimate gamified learning platform</p>
-            <div id="authError" class="error-msg"></div>
+            <div id="authError" class="error-msg" role="alert"></div>
 
-            <button class="btn-google" onclick="signInWithGoogle()">
-                <svg width="18" height="18" viewBox="0 0 48 48">
+            <button class="btn-google" onclick="signInWithGoogle()" aria-label="Sign in with Google">
+                <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
                     <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
                     <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
                     <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
@@ -1861,20 +1903,24 @@
 
             <div class="divider">or continue with email</div>
 
-            <input type="email" id="authEmail" placeholder="Email address" />
-            <input type="password" id="authPassword" placeholder="Password" />
-            <button class="btn-primary" id="authBtn" onclick="handleAuth()">
-                <i class="fas fa-sign-in-alt"></i> Sign In
+            <label for="authEmail" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Email address</label>
+            <input type="email" id="authEmail" placeholder="Email address" aria-label="Email address" />
+
+            <label for="authPassword" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Password</label>
+            <input type="password" id="authPassword" placeholder="Password" aria-label="Password" />
+
+            <button class="btn-primary" id="authBtn" onclick="handleAuth()" aria-label="Sign in">
+                <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Sign In
             </button>
 
             <div class="auth-toggle">
                 <span id="authToggleText">Don't have an account?</span>
-                <a onclick="toggleAuthMode()" id="authToggleLink">Sign Up</a>
+                <a onclick="toggleAuthMode()" id="authToggleLink" role="button" tabindex="0" aria-label="Toggle sign up mode">Sign Up</a>
             </div>
 
             <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.04);">
-                <button class="btn-google" onclick="signInAnonymously()" style="border-color:rgba(255,255,255,0.04);">
-                    <i class="fas fa-user-secret"></i> Continue as Guest
+                <button class="btn-google" onclick="signInAnonymously()" style="border-color:rgba(255,255,255,0.04);" aria-label="Continue as guest">
+                    <i class="fas fa-user-secret" aria-hidden="true"></i> Continue as Guest
                 </button>
             </div>
         </div>
@@ -1886,6 +1932,7 @@
         // ============================================================
         (function() {
             const canvas = document.getElementById('stars-canvas');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let stars = [];
 
@@ -1946,6 +1993,7 @@
         // ============================================================
         (function() {
             const container = document.getElementById('particles-container');
+            if (!container) return;
             const colors = ['#6c5ce7', '#a29bfe', '#fd79a8', '#00b894', '#fdcb6e', '#74b9ff'];
             for (let i = 0; i < 12; i++) {
                 const el = document.createElement('div');
@@ -2030,6 +2078,7 @@
                     document.getElementById('focusLabel').textContent = '🎉 Focus Complete!';
                     showToast('🎉 Focus session complete! +15 XP', 'achievement');
                     state.xp = (state.xp || 0) + 15;
+                    state.focusSessions = (state.focusSessions || 0) + 1;
                     renderAll();
                     syncData();
                     launchConfetti();
@@ -2063,14 +2112,20 @@
         // ============================================================
         function switchTab(tab) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
 
             const target = document.getElementById('tab-' + tab);
             if (target) target.classList.add('active');
 
-            document.querySelector(`.nav-tab[data-tab="${tab}"]`)?.classList.add('active');
+            const btn = document.querySelector(`.nav-tab[data-tab="${tab}"]`);
+            if (btn) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+            }
 
-            // Refresh charts when switching to analytics
             if (tab === 'analytics') {
                 setTimeout(renderCharts, 300);
             }
@@ -2182,8 +2237,8 @@
                 isAuthMode === 'signin' ? 'Sign Up' : 'Sign In';
             document.getElementById('authBtn').innerHTML =
                 isAuthMode === 'signin' ?
-                '<i class="fas fa-sign-in-alt"></i> Sign In' :
-                '<i class="fas fa-user-plus"></i> Sign Up';
+                '<i class="fas fa-sign-in-alt" aria-hidden="true"></i> Sign In' :
+                '<i class="fas fa-user-plus" aria-hidden="true"></i> Sign Up';
             document.getElementById('authError').textContent = '';
         }
 
@@ -2220,8 +2275,8 @@
                 errorEl.textContent = err.message;
                 btn.disabled = false;
                 btn.innerHTML = isAuthMode === 'signin' ?
-                    '<i class="fas fa-sign-in-alt"></i> Sign In' :
-                    '<i class="fas fa-user-plus"></i> Sign Up';
+                    '<i class="fas fa-sign-in-alt" aria-hidden="true"></i> Sign In' :
+                    '<i class="fas fa-user-plus" aria-hidden="true"></i> Sign Up';
             }
         }
 
@@ -2422,7 +2477,7 @@
                 div.className = `achievement-card ${isUnlocked ? '' : 'locked'}`;
                 div.innerHTML = `
                     <div class="icon ${isUnlocked ? a.color : 'silver'}">
-                        <i class="fas ${a.icon}"></i>
+                        <i class="fas ${a.icon}" aria-hidden="true"></i>
                     </div>
                     <div class="info">
                         <span class="title">${isUnlocked ? '✅' : '🔒'} ${a.title}</span>
@@ -2447,7 +2502,7 @@
                 div.className = `achievement-card ${isUnlocked ? '' : 'locked'}`;
                 div.innerHTML = `
                     <div class="icon ${isUnlocked ? a.color : 'silver'}">
-                        <i class="fas ${a.icon}"></i>
+                        <i class="fas ${a.icon}" aria-hidden="true"></i>
                     </div>
                     <div class="info">
                         <span class="title">${isUnlocked ? '✅' : '🔒'} ${a.title}</span>
@@ -2625,15 +2680,15 @@
                 const div = document.createElement('div');
                 div.className = 'goal-item';
                 div.innerHTML = `
-                    <button class="goal-check ${g.done ? 'done' : ''}" onclick="toggleGoal('${g.id}')">
+                    <button class="goal-check ${g.done ? 'done' : ''}" onclick="toggleGoal('${g.id}')" aria-label="${g.done ? 'Mark as incomplete' : 'Mark as complete'}">
                         ${g.done ? '✓' : ''}
                     </button>
                     <div class="goal-info">
                         <div class="title">${g.done ? '<s>' + g.title + '</s>' : g.title}</div>
                         <div class="desc">${g.done ? '✅ Completed' : '⏳ In progress'}</div>
                     </div>
-                    <button class="goal-delete" onclick="deleteGoal('${g.id}')">
-                        <i class="fas fa-times"></i>
+                    <button class="goal-delete" onclick="deleteGoal('${g.id}')" aria-label="Delete goal">
+                        <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
                 `;
                 container.appendChild(div);
@@ -2687,8 +2742,8 @@
                     <div class="note-content">${n.content}</div>
                     <div class="note-meta">
                         <span>${date.toLocaleDateString()}</span>
-                        <button class="note-delete" onclick="deleteNote('${n.id}')">
-                            <i class="fas fa-trash"></i>
+                        <button class="note-delete" onclick="deleteNote('${n.id}')" aria-label="Delete note">
+                            <i class="fas fa-trash" aria-hidden="true"></i>
                         </button>
                     </div>
                 `;
@@ -2779,17 +2834,17 @@
                 const div = document.createElement('div');
                 div.className = 'quest-item';
                 div.innerHTML = `
-                    <div class="quest-icon">${q.icon}</div>
+                    <div class="quest-icon" aria-hidden="true">${q.icon}</div>
                     <div class="quest-info">
                         <div class="title">${isComplete ? '✅' : '⚔️'} ${q.title}</div>
                         <div class="desc">${q.desc}</div>
                         <div class="progress-text">${q.progress} / ${q.max}</div>
                     </div>
-                    <div class="quest-progress">
+                    <div class="quest-progress" aria-hidden="true">
                         <div class="fill" style="width:${pct}%;"></div>
                     </div>
                     <div class="quest-reward">+${q.reward} XP</div>
-                    ${isComplete ? `<button class="header-btn" onclick="completeQuest('${q.id}')" style="background:var(--green);color:#fff;">Claim</button>` : ''}
+                    ${isComplete ? `<button class="header-btn" onclick="completeQuest('${q.id}')" style="background:var(--green);color:#fff;" aria-label="Claim quest reward">Claim</button>` : ''}
                 `;
                 container.appendChild(div);
             });
@@ -2802,7 +2857,6 @@
             const container = document.getElementById('leaderboardList');
             if (!container) return;
 
-            // Mock leaderboard data
             const mockUsers = [
                 { name: '🌟 You', xp: state.xp || 0, streak: state.streak || 0, courses: state.courses.filter(c => {
                         const p = state.courseProgress[c.id];
@@ -3190,28 +3244,28 @@
                 card.className = 'course-card';
                 card.innerHTML = `
                     <div class="course-header">
-                        <div class="course-name"><i class="fas ${c.icon}"></i>${c.name}</div>
+                        <div class="course-name"><i class="fas ${c.icon}" aria-hidden="true"></i>${c.name}</div>
                         <span class="badge ${badgeClass}">${badgeLabel}</span>
                     </div>
                     <div class="course-meta">
-                        <span><i class="fas fa-percent"></i>${progress}%</span>
-                        <span><i class="fas fa-clock"></i>${formatTimeShort(state.studyTime[c.id] || 0)}</span>
+                        <span><i class="fas fa-percent" aria-hidden="true"></i>${progress}%</span>
+                        <span><i class="fas fa-clock" aria-hidden="true"></i>${formatTimeShort(state.studyTime[c.id] || 0)}</span>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar" aria-hidden="true">
                         <div class="fill" style="width:${progress}%;"></div>
                     </div>
                     <div class="course-actions">
-                        <button class="btn-complete" onclick="updateCourseStatus('${c.id}','completed')">
-                            <i class="fas fa-check"></i> Complete
+                        <button class="btn-complete" onclick="updateCourseStatus('${c.id}','completed')" aria-label="Mark course as complete">
+                            <i class="fas fa-check" aria-hidden="true"></i> Complete
                         </button>
-                        <button onclick="updateCourseStatus('${c.id}','in-progress')">
-                            <i class="fas fa-play"></i> Start
+                        <button onclick="updateCourseStatus('${c.id}','in-progress')" aria-label="Start course">
+                            <i class="fas fa-play" aria-hidden="true"></i> Start
                         </button>
-                        <button class="btn-reset" onclick="updateCourseStatus('${c.id}','not-started')">
-                            <i class="fas fa-undo"></i> Reset
+                        <button class="btn-reset" onclick="updateCourseStatus('${c.id}','not-started')" aria-label="Reset course">
+                            <i class="fas fa-undo" aria-hidden="true"></i> Reset
                         </button>
-                        <button class="btn-remove" onclick="removeCourse('${c.id}')">
-                            <i class="fas fa-trash"></i>
+                        <button class="btn-remove" onclick="removeCourse('${c.id}')" aria-label="Remove course">
+                            <i class="fas fa-trash" aria-hidden="true"></i>
                         </button>
                     </div>
                 `;
@@ -3374,24 +3428,7 @@
         });
 
         console.log('%c✦ StudyVerse MEGA - Ultimate Learning Platform', 'font-size:28px;font-weight:900;color:#6c5ce7;');
-        console.log('%c🚀 ALL 25+ Features Included:', 'font-size:16px;color:#a29bfe;');
-        console.log('  ✅ Dashboard with stats & progress');
-        console.log('  ✅ Course management (add/edit/complete)');
-        console.log('  ✅ Analytics with charts');
-        console.log('  ✅ Goals tracker');
-        console.log('  ✅ Study notes');
-        console.log('  ✅ Quest system');
-        console.log('  ✅ Leaderboard');
-        console.log('  ✅ Achievements with unlock system');
-        console.log('  ✅ Mood tracker');
-        console.log('  ✅ Focus mode with timer');
-        console.log('  ✅ Color themes (5 options)');
-        console.log('  ✅ Daily challenges');
-        console.log('  ✅ XP & Leveling system');
-        console.log('  ✅ Streak tracking');
-        console.log('  ✅ Export/Import data');
-        console.log('  ✅ PWA ready');
-        console.log('  ✅ Keyboard shortcuts');
+        console.log('%c🚀 ALL 25+ Features Included!', 'font-size:16px;color:#a29bfe;');
         console.log('%c🎯 Shortcuts: Ctrl+Shift+C=Challenge, Ctrl+Shift+F=Focus, Ctrl+Shift+D=Day, Alt+1-9=Tabs', 'font-size:12px;color:#fd79a8;');
         console.log('%c🌟 Keep crushing your goals!', 'font-size:16px;color:#fdcb6e;');
     </script>
